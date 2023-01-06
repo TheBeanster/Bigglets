@@ -34,6 +34,12 @@
     <Filter Include="Source Files\Game\World\Entity">
       <UniqueIdentifier>{99f41bf4-9642-48f2-af7c-2c1d921051e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Game\Utility">
+      <UniqueIdentifier>{f8e4baf7-e07f-40a2-a483-7b3cab776c66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\World\Camera">
+      <UniqueIdentifier>{bef43a26-d44f-422f-b0f1-238fe943f1af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="system.cpp">
@@ -66,6 +72,9 @@
     <ClCompile Include="game_render.cpp">
       <Filter>Source Files\Game\Main</Filter>
     </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Source Files\Game\World\Camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="system.h">
@@ -79,6 +88,15 @@
     </ClInclude>
     <ClInclude Include="game_main.h">
       <Filter>Source Files\Game\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>Source Files\Game\World\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2.h">
+      <Filter>Source Files\Game\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Source Files\Game\World\Camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

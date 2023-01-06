@@ -72,23 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Filip\source\repos\Bigglets\SDL2-2.0.22\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Filip\source\repos\Bigglets\SDL2-2.0.22\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)SDL2-2.0.22\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)SDL2-2.0.22\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\Filip\source\repos\Bigglets\SDL2-2.0.22\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Filip\source\repos\Bigglets\SDL2-2.0.22\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)SDL2-2.0.22\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)SDL2-2.0.22\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Filip\source\repos\Bigglets\SDL2-2.0.22\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Filip\source\repos\Bigglets\SDL2-2.0.22\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)SDL2-2.0.22\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)SDL2-2.0.22\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\Filip\source\repos\Bigglets\SDL2-2.0.22\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Filip\source\repos\Bigglets\SDL2-2.0.22\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)SDL2-2.0.22\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)SDL2-2.0.22\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="big.cpp" />
+    <ClCompile Include="camera.cpp" />
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="game_init.cpp" />
     <ClCompile Include="game_loop.cpp" />
@@ -164,9 +165,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="big.h" />
+    <ClInclude Include="camera.h" />
     <ClInclude Include="debug.h" />
+    <ClInclude Include="entity.h" />
     <ClInclude Include="game_main.h" />
     <ClInclude Include="system.h" />
+    <ClInclude Include="vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

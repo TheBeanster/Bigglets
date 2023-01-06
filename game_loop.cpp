@@ -2,6 +2,8 @@
 
 #include "system.h"
 #include "debug.h"
+#include "vector2.h"
+#include "camera.h"
 #include <stdlib.h>
 
 void GameLoop()
@@ -12,6 +14,12 @@ void GameLoop()
 	SDL_RenderClear(sys::mainRenderer);
 	
 	debug::DrawFrameRateDisplay(i);
+
+	UpdateCamera();
+	std::cout << cameraPosition << '\n';
+	
+	debug::SetColor(0, 255, 0, 255);
+	debug::FillRectInWorld(10, 10, 10, 10);
 
 	i++;
 }
