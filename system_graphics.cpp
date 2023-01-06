@@ -54,7 +54,9 @@ bool CreateMainRenderer()
 	mainRenderer = SDL_CreateRenderer(
 		mainWindow, 
 		-1, 
-		SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_TARGETTEXTURE
+		SDL_RENDERER_ACCELERATED | 
+		SDL_RENDERER_PRESENTVSYNC | 
+		SDL_RENDERER_TARGETTEXTURE
 	);
 
 	if (mainRenderer == nullptr)
@@ -96,11 +98,14 @@ bool CreateMainTexture(int width, int height)
 
 
 
+
+
 bool InitGraphics()
 {
-	if (!CreateMainWindow("Bigglets", 400, 400)) goto onerror;
+	if (SDL_InitSubSystem(SDL_INIT_VIDEO) < 0) goto onerror;
+	if (!CreateMainWindow("Bigglets", 640, 480)) goto onerror;
 	if (!CreateMainRenderer()) goto onerror;
-	if (!CreateMainTexture(300, 300)) goto onerror;
+	if (!CreateMainTexture(320, 240)) goto onerror;
 
 	return true;
 

@@ -152,6 +152,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="big.cpp" />
+    <ClCompile Include="debug.cpp" />
+    <ClCompile Include="game_init.cpp" />
+    <ClCompile Include="game_loop.cpp" />
+    <ClCompile Include="game_quit.cpp" />
+    <ClCompile Include="game_render.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="system.cpp" />
     <ClCompile Include="system_graphics.cpp" />
@@ -159,6 +164,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="big.h" />
+    <ClInclude Include="debug.h" />
+    <ClInclude Include="game_main.h" />
     <ClInclude Include="system.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

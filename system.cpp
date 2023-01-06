@@ -11,6 +11,7 @@ namespace sys
 
 bool InitSystem()
 {
+	
 	if (!InitGraphics()) return false;
 
 	return true;

@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "system.h"
+#include "game_main.h"
 
 
 
@@ -11,7 +12,7 @@ int BigMain()
 
 	if (!InitSystem()) return 1;
 
-
+	if (!GameInit()) return 2;
 	
 	std::clog << "Entering main loop\n";
 
@@ -22,15 +23,16 @@ int BigMain()
 
 		SDL_SetRenderTarget(mainRenderer, mainTexture);
 
-		SDL_SetRenderDrawColor(mainRenderer, 0, 0, 0, 255);
-		SDL_RenderClear(mainRenderer);
+		GameLoop();
+
+		GameRender();
 
 		SDL_SetRenderTarget(mainRenderer, NULL);
 		SDL_RenderCopy(mainRenderer, mainTexture, NULL, NULL);
 		SDL_RenderPresent(mainRenderer);
 	}
 
-
+	GameQuit();
 
 	sys::QuitSystem();
 

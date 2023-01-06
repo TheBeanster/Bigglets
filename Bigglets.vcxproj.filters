@@ -13,30 +13,72 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\System">
+      <UniqueIdentifier>{d9127a1c-4956-4660-b2b6-fd5ddd0db31d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Main">
+      <UniqueIdentifier>{595efed5-e07b-499f-abed-12c8576471d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{ce1ce851-8fb9-446c-bbb4-f8d39b2ee63f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug">
+      <UniqueIdentifier>{b7c6ee82-608c-4913-aef8-16217f7160c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Main">
+      <UniqueIdentifier>{5eee3160-94e7-4042-8e01-bbe5a11e37c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\World">
+      <UniqueIdentifier>{75c4f4ec-b30c-4b50-9ddd-6c6a7a11584b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\World\Entity">
+      <UniqueIdentifier>{99f41bf4-9642-48f2-af7c-2c1d921051e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="system.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\System</Filter>
     </ClCompile>
     <ClCompile Include="system_graphics.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="big.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\System</Filter>
     </ClCompile>
     <ClCompile Include="system_input.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\System</Filter>
+    </ClCompile>
+    <ClCompile Include="big.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.cpp">
+      <Filter>Source Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="game_init.cpp">
+      <Filter>Source Files\Game\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="game_loop.cpp">
+      <Filter>Source Files\Game\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="game_quit.cpp">
+      <Filter>Source Files\Game\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="game_render.cpp">
+      <Filter>Source Files\Game\Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="system.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\System</Filter>
     </ClInclude>
     <ClInclude Include="big.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="debug.h">
+      <Filter>Source Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="game_main.h">
+      <Filter>Source Files\Game\Main</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
