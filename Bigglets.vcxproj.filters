@@ -40,6 +40,9 @@
     <Filter Include="Source Files\Game\World\Camera">
       <UniqueIdentifier>{bef43a26-d44f-422f-b0f1-238fe943f1af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Game\World\Tilemap">
+      <UniqueIdentifier>{497b49e0-3430-4290-a52d-aa0162f20732}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="system.cpp">
@@ -97,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="camera.h">
       <Filter>Source Files\Game\World\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="tilemap.h">
+      <Filter>Source Files\Game\World\Tilemap</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
