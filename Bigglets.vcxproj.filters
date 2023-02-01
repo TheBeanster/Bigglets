@@ -78,6 +78,15 @@
     <ClCompile Include="camera.cpp">
       <Filter>Source Files\Game\World\Camera</Filter>
     </ClCompile>
+    <ClCompile Include="tilemap.cpp">
+      <Filter>Source Files\Game\World\Tilemap</Filter>
+    </ClCompile>
+    <ClCompile Include="utility.cpp">
+      <Filter>Source Files\Game\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>Source Files\Game\World\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="system.h">
@@ -104,5 +113,22 @@
     <ClInclude Include="tilemap.h">
       <Filter>Source Files\Game\World\Tilemap</Filter>
     </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>Source Files\Game\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="exception.h">
+      <Filter>Source Files\Game\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="utility.h">
+      <Filter>Source Files\Game\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>Source Files\Game\World\Entity</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="testTilemapFile.bigtilemap">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
