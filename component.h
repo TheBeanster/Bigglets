@@ -2,10 +2,21 @@
 
 
 
+enum class ComponentType
+{
+	testComponent,
+};
+
+
+
 class Component
 {
 public:
 	
-	unsigned int type;
+	ComponentType type;
 
+	virtual void Start();
+	virtual void Update();
+	virtual void Render();
+	virtual void Destroy();
 };

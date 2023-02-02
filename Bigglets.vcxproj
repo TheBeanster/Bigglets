@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="big.cpp" />
     <ClCompile Include="camera.cpp" />
+    <ClCompile Include="component.cpp" />
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="game_init.cpp" />

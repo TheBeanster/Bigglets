@@ -11,13 +11,19 @@
 
 Tilemap::TilemapBlock::TilemapBlock(FILE* file)
 {
-	for (int y = 0; y < height; y++)
+	for (int i = 0; i < tileCount >> 1; i++)
 	{
-		for (int x = 0; x < width; x++)
-		{
-			tiles[x + (y * width)] = 1;
-		}
+		unsigned char byte = fgetc(file);
+		tiles[(i << 1)]		= (Tile)(byte & 0b00001111);
+		tiles[(i << 1) + 1] = (Tile)(byte >> 4);
 	}
+}
+
+
+
+Tilemap::TilemapBlock::~TilemapBlock()
+{
+	
 }
 
 
@@ -37,7 +43,7 @@ void Tilemap::TilemapBlock::CreateDebugTilemap()
 
 void Tilemap::TilemapBlock::Render(int offx, int offy)
 {
-	SDL_SetRenderDrawColor(sys::mainRenderer, rand() % 256, rand() % 256, rand() % 256, 255);
+	SDL_SetRenderDrawColor(sys::mainRenderer, 255, 255, 255, 255);
 	SDL_Rect rect = { 0, 0, 8, 8 };
 	for (int y = 0; y < height; y++)
 	{
@@ -70,18 +76,29 @@ Tilemap::Tilemap(const char* const filename)
 	{
 		throw 0;
 	}
-	
-	blocks = new TilemapBlock*[4];
-	for (int i = 0; i < 4; i++)
+
+	TilemapFileHeader header;
+	fread(&header, sizeof(header), 1, file);
+
+	blockwidth = header.blockwidth;
+	blockheight = header.blockheight;
+	blockcount = blockwidth * blockheight;
+	tilewidth = blockwidth << TilemapBlock::widthShift;
+	tileheight = blockheight << TilemapBlock::heightShift;
+
+	char* nullblocks = new char[blockcount];
+	fread(nullblocks, sizeof(char), blockcount, file);
+
+	blocks = new TilemapBlock*[blockcount];
+	for (int i = 0; i < blockcount; i++)
 	{
-		blocks[i] = new TilemapBlock;
-		blocks[i]->CreateDebugTilemap();
+		if (nullblocks[i])
+			blocks[i] = new TilemapBlock(file);
+		else
+			blocks[i] = nullptr;
 	}
 	
-	blockwidth = 2;
-	blockheight = 2;
-	tilewidth = blockwidth * TilemapBlock::width;
-	tileheight = blockheight * TilemapBlock::height;
+	delete[] nullblocks;
 }
 
 
@@ -111,9 +128,10 @@ void Tilemap::Render()
 		for (int bx = 0; bx < blockwidth; bx++)
 		{
 			TilemapBlock* block = GetTilemapBlock(bx, by);
-			block->Render(
-				(bx << (TilemapBlock::widthShift + tileshift)) - cameraRenderPositionX,
-				(by << (TilemapBlock::heightShift) + tileshift) - cameraRenderPositionY);
+			if (block)
+				block->Render(
+					(bx << (TilemapBlock::widthShift + tileshift)) - cameraRenderPositionX,
+					(by << (TilemapBlock::heightShift) + tileshift) - cameraRenderPositionY);
 		}
 	}
 }

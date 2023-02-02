@@ -32,15 +32,22 @@ private:
 
 		TilemapBlock() = default;
 		TilemapBlock(FILE* file);
-		~TilemapBlock() = default;
+		~TilemapBlock();
 
 		void CreateDebugTilemap();
 
 		void Render(int offx, int offy);
 	};
 
+	struct TilemapFileHeader
+	{
+		int blockwidth;
+		int blockheight;
+	};
+
 	int blockwidth;
 	int blockheight;
+	int blockcount;
 	int tilewidth;
 	int tileheight;
 	TilemapBlock** blocks;
