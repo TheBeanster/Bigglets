@@ -2,6 +2,7 @@
 
 #include "vector2.h"
 #include <list>
+#include <vector>
 
 #include "component.h"
 
@@ -32,8 +33,8 @@ public:
 	void Render();
 
 private:
-
-	Component* components;
+	
+	std::vector<Component> components;
 
 };
 

@@ -20,6 +20,16 @@ Entity::Entity(EntityType type)
 
 
 
+void Entity::Update()
+{
+	for (auto& component : components)
+	{
+		component.Update();
+	}
+}
+
+
+
 std::list<Entity> worldEntities;
 
 
