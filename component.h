@@ -1,10 +1,13 @@
 #pragma once
 
+#include "vector2.h"
 
 
-enum class ComponentType
+
+enum ComponentType
 {
-	testComponent,
+	CTYPE_TESTCOMPONENT,
+
 };
 
 
@@ -12,7 +15,7 @@ enum class ComponentType
 class Component
 {
 public:
-	
+
 	ComponentType type;
 
 	virtual void Start();
@@ -20,3 +23,16 @@ public:
 	virtual void Render();
 	virtual void Destroy();
 };
+
+
+
+
+
+class CPosition : public Component
+{
+public:
+	vector2 position;
+
+	void Render();
+};
+
